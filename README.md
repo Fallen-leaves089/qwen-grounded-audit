@@ -1,6 +1,25 @@
 # qwen-grounded-audit
 
+[![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
+[![Audit: read-only](https://img.shields.io/badge/audit-read--only-informational.svg)](SKILL.md)
+[![Adapter: Qwen Code + Qwen](https://img.shields.io/badge/adapter-Qwen%20Code%20%2B%20Qwen-blueviolet.svg)](hosts/qwen-code.md)
+[![Validation: documented](https://img.shields.io/badge/validation-documented-lightgrey.svg)](tests/model-evals/README.md)
+[![Model behavior: unverified](https://img.shields.io/badge/model%20behavior-unverified-orange.svg)](tests/model-evals/README.md)
+
 Qwen（千问） + Qwen Code 的证据优先项目健康审计技能。此项目是 `grounded-audit` 系列的独立拆分，只包含当前宿主和模型补偿，不依赖其他适配项目。
+
+## 适配标签
+
+| 标签 | 值 |
+|---|---|
+| 分发仓库 | `qwen-grounded-audit` |
+| 宿主 | Qwen Code |
+| 模型 | Qwen（千问） |
+| 技能名 | `project-health-audit` |
+| 调用入口 | `/project-health-audit` |
+| 适配证据 | `documented` |
+| 模型行为 | 未验证 |
+| 许可 | Apache-2.0 |
 
 ## 名字与调用
 
