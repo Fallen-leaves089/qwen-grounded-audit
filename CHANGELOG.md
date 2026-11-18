@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Separate deterministic package and contract checks from model-behavior evidence in the README and model-eval record format.
+
 ## 0.1.0 - 2026-11-18
 
 - Split `qwen-grounded-audit` out of the combined `grounded-audit` package.

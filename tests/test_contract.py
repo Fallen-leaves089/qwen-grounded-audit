@@ -65,6 +65,29 @@ class ContractTests(unittest.TestCase):
         self.assertIn(address, read("README.md"))
         self.assertIn(address, read(MANIFEST["model_profile"]))
 
+    def test_validation_boundary_is_explicit(self) -> None:
+        readme = read("README.md")
+        for marker in (
+            "## 验证边界与适配状态",
+            "确定性检查",
+            "不调用真实模型",
+            "不等于模型行为已验证",
+            "tests/model-evals/README.md",
+        ):
+            self.assertIn(marker, readme)
+        evals = read("tests/model-evals/README.md")
+        for marker in (
+            "## 验证等级",
+            "deterministic",
+            "documented",
+            "observed",
+            "validated",
+            "宿主版本",
+            "权限/沙箱模式",
+            "未覆盖项",
+        ):
+            self.assertIn(marker, evals)
+
     def test_runtime_required_files_are_subset_of_required_files(self) -> None:
         required = set(MANIFEST["required_files"])
         runtime = set(MANIFEST["runtime_required_files"])

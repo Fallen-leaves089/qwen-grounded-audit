@@ -76,6 +76,12 @@ python scripts/verify_package.py
 python -B -m unittest discover -s tests -p "test_*.py"
 ```
 
+以上命令是确定性检查：只验证包结构、安装器、记录器、安全边界和文档契约，不调用真实模型或宿主。它们全部通过，不等于模型行为已验证。
+
+## 验证边界与适配状态
+
+**documented**：已按 Qwen Code 官方文档核对宿主契约；本次发布没有提供 Qwen Code 运行时或 Qwen（千问）模型行为验证。真实模型行为须按 `tests/model-evals/README.md` 在目标宿主和模型上人工评测，并记录模型、宿主、权限模式、日期、结果、证据和未覆盖项。此类评测依赖模型版本、系统提示、工具集和采样，不进入默认 CI，也不作为发布闸门。没有对应评测记录时，不写成 `validated`。
+
 ## 反馈
 
 Qwen（千问） / Qwen Code 行为反馈请发送到 **chenshuidelaye@qq.com**。请附模型与版本、宿主与版本、最小复现、实际行为、预期行为和脱敏证据；不要发送密钥、令牌、客户数据、个人路径或未脱敏日志。可复现结果会记录到 `tests/model-evals/`。
