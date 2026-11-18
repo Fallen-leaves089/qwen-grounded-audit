@@ -1,5 +1,6 @@
 # qwen-grounded-audit
 
+[![Release](https://img.shields.io/github/v/release/Fallen-leaves089/qwen-grounded-audit?label=release)](https://github.com/Fallen-leaves089/qwen-grounded-audit/releases/latest)
 [![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
 [![Audit: read-only](https://img.shields.io/badge/audit-read--only-informational.svg)](SKILL.md)
 [![Adapter: Qwen Code + Qwen](https://img.shields.io/badge/adapter-Qwen%20Code%20%2B%20Qwen-blueviolet.svg)](hosts/qwen-code.md)

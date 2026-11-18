@@ -1,7 +1,9 @@
 # Changelog
 
-## Unreleased
+## 0.1.1 - 2026-11-18
 
+- Standardize host/model-specific repository metadata, README labels, and release packaging.
+- Publish downloadable archives with SHA-256 checksums.
 - Separate deterministic package and contract checks from model-behavior evidence in the README and model-eval record format.
 
 ## 0.1.0 - 2026-11-18
