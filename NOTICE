@@ -1,0 +1,8 @@
+qwen-grounded-audit
+Copyright 2026 qwen-grounded-audit contributors
+
+This project is an independent evolution of the project-health audit concept.
+It does not include the original project's pitfall corpus, platform playbooks,
+or source code.
+
+Licensed under the Apache License, Version 2.0.
