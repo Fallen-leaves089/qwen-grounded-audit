@@ -6,3 +6,7 @@ It does not include the original project's pitfall corpus, platform playbooks,
 or source code.
 
 Licensed under the Apache License, Version 2.0.
+
+This repository is part of the grounded-audit ecosystem and is related to the project-health main project.
+The main project is noncommercial under the PolyForm Noncommercial License 1.0.0.
+This repository is separately open source under Apache-2.0; that license does not change the main project's license.

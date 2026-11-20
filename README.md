@@ -107,10 +107,20 @@ python -B -m unittest discover -s tests -p "test_*.py"
 
 ## 反馈
 
-Qwen（千问） / Qwen Code 行为反馈请发送到 **chenshuidelaye@qq.com**。请附模型与版本、宿主与版本、最小复现、实际行为、预期行为和脱敏证据；不要发送密钥、令牌、客户数据、个人路径或未脱敏日志。可复现结果会记录到 `tests/model-evals/`。
+遇到问题可以直接反馈，不需要准备完整复现或日志。请说明：
+
+- 你遇到的问题；
+- 使用的模型；
+- 使用的壳/宿主（例如你实际使用的客户端、CLI 或 Agent 宿主）。
+
+发送到 [GitHub Issues](https://github.com/Fallen-leaves089/qwen-grounded-audit/issues) 或 `chenshuidelaye@qq.com`。不要发送密钥、令牌、客户数据或个人路径。
 
 ## 许可
 
+> **主项目许可边界**：本仓库是 `grounded-audit` 生态中与主项目 `project-health` 关联的专项技能。
+> 主项目按 **PolyForm Noncommercial License 1.0.0** 发布，仅限非商业用途；商业使用需取得主项目作者书面授权。
+> 本仓库按 **Apache License 2.0** 完全开源，允许商业使用、修改和分发；两者分别授权，Apache-2.0 不改变主项目的非商业许可。
+
 Apache License 2.0。允许商业使用、修改和分发；请保留许可证与 NOTICE 中的归属说明。
 
-本项目是 `project-health` 审计理念的独立演进，不包含原项目的避坑语料、平台手册或源代码。
+本仓库是 `grounded-audit` 生态中与主项目 `project-health` 关联的专项技能；本仓库不包含主项目的避坑语料、平台手册或源代码。

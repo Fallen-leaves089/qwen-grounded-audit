@@ -63,7 +63,7 @@ class SecurityTests(unittest.TestCase):
     def test_verifier_rejects_legacy_license_text(self) -> None:
         destination = self.base / "legacy-license"
         copy_package(destination)
-        marker = "Poly" + "Form Non" + "commercial"
+        marker = "The licensor grants you a copyright license"
         (destination / "references" / "legacy-note.md").write_text(marker + "\n", encoding="utf-8")
         result = run_verifier(destination)
         self.assertNotEqual(result.returncode, 0)

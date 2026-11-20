@@ -48,7 +48,14 @@ BINARY_EXTENSIONS = {
 SKIP_DIRS = {".git", "__pycache__", ".venv", "venv", "dist", "build", ".mypy_cache", ".pytest_cache"}
 SECRET_SCAN_SKIP = {"scripts/verify_package.py"}
 
-FORBIDDEN_LICENSE = ("Poly" + "Form", "Non" + "commercial")
+FORBIDDEN_LICENSE = (
+    "## Acceptance",
+    "## Distribution License",
+    "## Noncommercial Purposes",
+    "## Personal Uses",
+    "## Noncommercial Organizations",
+    "The licensor grants you a copyright license",
+)
 FORBIDDEN_PATHS = (
     "windows-" + "pitfalls",
     "macos-" + "pitfalls",
