@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.2 - 2026-11-20
+
+- Add the English README and language switch.
+- Clarify the Apache-2.0 ecosystem skill license boundary and the related main project's noncommercial status.
+- Simplify feedback to the problem encountered, the model used, and the shell/host used.
+- Refresh the downloadable release archive so it matches the current documentation.
+
 ## 0.1.1 - 2026-11-18
 
 - Standardize host/model-specific repository metadata, README labels, and release packaging.

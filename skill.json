@@ -2,7 +2,7 @@
   "schema_version": 1,
   "name": "project-health-audit",
   "package_name": "qwen-grounded-audit",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "license": "Apache-2.0",
   "description": "Grounded project health audit for Qwen Code and Qwen（千问）.",
   "first_host": "qwen-code",

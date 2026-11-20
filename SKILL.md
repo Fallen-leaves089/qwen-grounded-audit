@@ -4,7 +4,7 @@ description: 证据落地的项目健康审计，针对 Qwen Code 与 Qwen（千
 license: Apache-2.0
 compatibility: 适用于 Qwen Code 的 Agent Skills / SKILL.md 技能入口；Python 3.10+ 可选，用于安装、校验和安全记录器。
 metadata:
-  version: 0.1.1
+  version: 0.1.2
   stage: single-host-qwen-code
   memory-format: six-field-markdown
   short-description: "证据优先的项目健康审计"
