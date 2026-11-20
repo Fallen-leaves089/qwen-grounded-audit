@@ -30,7 +30,7 @@ class ContractTests(unittest.TestCase):
         self.assertEqual(lines[0].strip(), "---")
         self.assertIn("name: project-health-audit", lines)
         self.assertIn("license: Apache-2.0", lines)
-        self.assertIn("  version: 0.1.2", lines)
+        self.assertIn("  version: 0.1.3", lines)
         allowed_tools = "allowedTools:\n  - read_file\n  - glob\n  - grep_search"
         self.assertIn(allowed_tools, text)
         self.assertIn(allowed_tools, read("hosts/qwen-code.md"))

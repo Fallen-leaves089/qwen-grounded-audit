@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.3 - 2026-11-20
+
+- Align `allowedTools` across `SKILL.md`, the Qwen Code host guide, the manifest marker, and contract tests using Qwen Code's array syntax.
+- Teach the package verifier to inspect block-style `allowedTools`/`allowed-tools` lists so forbidden tool pre-approvals cannot be missed.
+- Refresh the downloadable release archive so consumers receive the corrected package.
+
 ## 0.1.2 - 2026-11-20
 
 - Add the English README and language switch.
