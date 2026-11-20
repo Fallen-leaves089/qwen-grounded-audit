@@ -118,6 +118,7 @@ def parse_frontmatter(path: Path) -> Dict[str, object]:
     fields: Dict[str, object] = {}
     metadata: Dict[str, str] = {}
     in_metadata = False
+    list_key = None
     closed = False
     for line in lines[1:]:
         if line.strip() == "---":
@@ -130,7 +131,14 @@ def parse_frontmatter(path: Path) -> Dict[str, object]:
             if sep:
                 metadata[key.strip()] = value.strip().strip('"').strip("'")
             continue
+        if list_key and line.startswith((" ", "\t")) and line.lstrip().startswith("-"):
+            item = line.lstrip()[1:].strip().strip('"').strip("'")
+            current = fields.get(list_key)
+            if isinstance(current, list):
+                current.append(item)
+            continue
         in_metadata = False
+        list_key = None
         if ":" not in line:
             continue
         key, value = line.split(":", 1)
@@ -138,6 +146,10 @@ def parse_frontmatter(path: Path) -> Dict[str, object]:
         value = value.strip().strip('"').strip("'")
         if key == "metadata":
             in_metadata = True
+            continue
+        if key in {"allowedTools", "allowed-tools"} and value == "":
+            fields[key] = []
+            list_key = key
             continue
         fields[key] = value
     if not closed:
@@ -296,7 +308,11 @@ def check_frontmatter(root: Path, manifest: Dict[str, object], failures: List[st
     metadata = fields.get("metadata")
     if not isinstance(metadata, dict) or metadata.get("version") != manifest.get("version"):
         failures.append("SKILL.md: metadata.version does not match skill.json")
-    allowed = str(fields.get("allowed-tools") or fields.get("allowedTools") or "")
+    allowed_value = fields.get("allowed-tools") or fields.get("allowedTools") or ""
+    if isinstance(allowed_value, list):
+        allowed = ", ".join(str(item) for item in allowed_value)
+    else:
+        allowed = str(allowed_value)
     for forbidden in ("Bash", "Write", "Edit", "NotebookEdit", "WebFetch", "WebSearch", "write_file", "edit", "run_shell_command", "web_fetch", "web_search", "agent", "monitor"):
         if re.search(rf"(?<![A-Za-z]){forbidden}(?![A-Za-z])", allowed):
             failures.append(f"SKILL.md: audit skill must not pre-approve {forbidden}")

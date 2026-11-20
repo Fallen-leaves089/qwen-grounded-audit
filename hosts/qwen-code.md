@@ -21,7 +21,15 @@ Qwen Code 是宿主，Qwen 是实际推理模型。审计失败可能来自模�
 
 - 用户显式入口：`/project-health-audit`。
 - 也可以通过 `/skills` 选择器或技能描述自动选择，具体行为按当前 Qwen Code 版本复验。
-- Qwen Code 读取 `allowedTools` 前端字段；写入为其他 Agent 准备的 `allowed-tools` 会被忽略。本项目使用 `allowedTools: [read_file, glob, grep_search]`。
+- Qwen Code 读取 `allowedTools` 前端字段；写入为其他 Agent 准备的 `allowed-tools` 会被忽略。本项目使用下面的只读数组：
+
+```yaml
+allowedTools:
+  - read_file
+  - glob
+  - grep_search
+```
+
 - 技能正文和 `allowedTools` 属于指令或预授权，不是硬安全边界；不可违反的规则使用 sandbox、审批、folder trust 或 hooks。
 - 项目技能会随目录共享；审计不可信仓库时，先建立隔离和权限边界。
 

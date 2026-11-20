@@ -13,7 +13,7 @@
   "host_adapter": "hosts/qwen-code.md",
   "model_profile": "models/qwen.md",
   "target_instruction_file": "QWEN.md",
-  "allowed_tools_marker": "allowedTools: [read_file, glob, grep_search]",
+  "allowed_tools_marker": "allowedTools:\n  - read_file\n  - glob\n  - grep_search",
   "forbidden_tool_injection": "write_file",
   "memory": {
     "local": "PITFALLS.local.md",

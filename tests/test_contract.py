@@ -31,7 +31,10 @@ class ContractTests(unittest.TestCase):
         self.assertIn("name: project-health-audit", lines)
         self.assertIn("license: Apache-2.0", lines)
         self.assertIn("  version: 0.1.2", lines)
-        self.assertIn("allowedTools: [read_file, glob, grep_search]", text)
+        allowed_tools = "allowedTools:\n  - read_file\n  - glob\n  - grep_search"
+        self.assertIn(allowed_tools, text)
+        self.assertIn(allowed_tools, read("hosts/qwen-code.md"))
+        self.assertEqual(MANIFEST.get("allowed_tools_marker"), allowed_tools)
         allowed = str(MANIFEST.get("allowed_tools_marker", ""))
         for forbidden in ("Write", "NotebookEdit", "write_file", "edit", "run_shell_command", "web_fetch", "web_search"):
             if forbidden in allowed:

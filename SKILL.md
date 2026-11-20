@@ -8,7 +8,10 @@ metadata:
   stage: single-host-qwen-code
   memory-format: six-field-markdown
   short-description: "证据优先的项目健康审计"
-allowedTools: [read_file, glob, grep_search]
+allowedTools:
+  - read_file
+  - glob
+  - grep_search
 ---
 
 # Qwen（千问） 项目健康实证审计

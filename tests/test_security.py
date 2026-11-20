@@ -82,7 +82,10 @@ class SecurityTests(unittest.TestCase):
         copy_package(destination)
         skill = destination / "SKILL.md"
         text = skill.read_text(encoding="utf-8")
-        text = text.replace("allowedTools: [read_file, glob, grep_search]", "allowedTools: [read_file, glob, grep_search, write_file]")
+        text = text.replace(
+            "allowedTools:\n  - read_file\n  - glob\n  - grep_search",
+            "allowedTools:\n  - read_file\n  - glob\n  - grep_search\n  - write_file",
+        )
         skill.write_text(text, encoding="utf-8", newline="\n")
         result = run_verifier(destination)
         self.assertNotEqual(result.returncode, 0)
